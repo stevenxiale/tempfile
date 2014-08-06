@@ -1,4 +1,4 @@
-package com.jd.userprofile.procedures;
+package com.jd.orderpat.procedures;
 
 import org.voltdb.SQLStmt;
 import org.voltdb.VoltProcedure;
@@ -7,8 +7,8 @@ import org.voltdb.VoltTable;
 public class QueryCount extends VoltProcedure {
 
 	public final SQLStmt getCount = new SQLStmt(
-		"SELECT COUNT(1) " +
-	    "FROM USERPROFILE; "
+		"SELECT COUNT(*) " +
+	    "FROM orders_par; "
 	);
 	
 	public VoltTable[] run() throws VoltAbortException {

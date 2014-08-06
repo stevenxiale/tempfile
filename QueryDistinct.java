@@ -1,4 +1,4 @@
-package com.jd.userprofile.procedures;
+package com.jd.orderpat.procedures;
 
 import org.voltdb.SQLStmt;
 import org.voltdb.VoltProcedure;
@@ -7,9 +7,7 @@ import org.voltdb.VoltTable;
 public class QueryDistinct extends VoltProcedure {
 
 	public final SQLStmt getTop = new SQLStmt(
-		"SELECT TOP 10 " +
-	    "DISTINCT user_log_acct " +
-	    "FROM USERPROFILE; "
+		"select distinct user_log_acct from orders_par limit 10;"
 	);
 	
 	public VoltTable[] run() throws VoltAbortException {

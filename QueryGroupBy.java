@@ -1,4 +1,4 @@
-package com.jd.userprofile.procedures;
+package com.jd.orderpat.procedures;
 
 import org.voltdb.SQLStmt;
 import org.voltdb.VoltProcedure;
@@ -7,9 +7,7 @@ import org.voltdb.VoltTable;
 public class QueryGroupBy extends VoltProcedure {
 
 	public final SQLStmt getTop = new SQLStmt(
-		"SELECT TOP 10 " +
-	    "DISTINCT user_log_acct " +
-	    "FROM USERPROFILE; "
+		"select sku_id,sum(SALE_QTTY) from orders_par group by sku_id limit 10;"
 	);
 	
 	public VoltTable[] run() throws VoltAbortException {

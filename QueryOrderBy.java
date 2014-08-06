@@ -1,4 +1,4 @@
-package com.jd.userprofile.procedures;
+package com.jd.orderpat.procedures;
 
 import org.voltdb.SQLStmt;
 import org.voltdb.VoltProcedure;
@@ -7,7 +7,7 @@ import org.voltdb.VoltTable;
 public class QueryOrderBy extends VoltProcedure {
 
 	public final SQLStmt getOrderBy = new SQLStmt(
-		"select top 10 * from  USERPROFILE order by ord_tm desc;"
+		"select  * from  orders_par order by ord_tm desc limit 10;"
 	);
 	
 	public VoltTable[] run() throws VoltAbortException {

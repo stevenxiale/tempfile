@@ -1,4 +1,4 @@
-package com.jd.userprofile.procedures;
+package com.jd.orderpat.procedures;
 
 import org.voltdb.SQLStmt;
 import org.voltdb.VoltProcedure;
@@ -7,7 +7,7 @@ import org.voltdb.VoltTable;
 public class BIFilter extends VoltProcedure {
 
 	public final SQLStmt getFilter = new SQLStmt(
-		"select a.user_log_acct,a.sku_id,a.item_first_cate_cd from USERPROFILE a where a.user_log_acct='paper1973';"
+		"select a.user_log_acct,a.sku_id,a.item_first_cate_cd from orders_par a where a.user_log_acct='paper1973' limit 10;"
 	);
 	
 	public VoltTable[] run() throws VoltAbortException {
